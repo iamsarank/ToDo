@@ -1,11 +1,21 @@
-
+import Create from './Components/Create';
+import Read from './Components/Read';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter, Route, Router } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>ToDo</h1>
-    </div>
+    <Container fluid>
+      <h2>ToDo App</h2>
+      <BrowserRouter>
+        <Router>
+          <Route exact path='/create' element={<Create />}/>
+          <Route exact path='/' element={<Read />}/>
+
+        </Router>
+      </BrowserRouter>
+    </Container>
   );
 }
 
